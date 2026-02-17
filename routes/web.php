@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', fn () => redirect('/login'));
+Route::get('/', fn () => redirect('/login'))->name('home');
 
 Route::get('dashboard', function () {
     return Inertia::render('dashboard');
