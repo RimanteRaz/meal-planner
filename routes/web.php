@@ -5,8 +5,10 @@ use Inertia\Inertia;
 
 Route::get('/', fn () => redirect('/login'))->name('home');
 
-Route::get('dashboard', function () {
-    return Inertia::render('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('dashboard', fn () => Inertia::render('dashboard'))->name('dashboard');
+
+    Route::get('recipes', fn () => Inertia::render('recipes/index'))->name('recipes');
+});
 
 require __DIR__.'/settings.php';
