@@ -37,7 +37,7 @@ const Dashboard = () => {
 };
 
 Dashboard.layout = (page: ReactNode) => (
-    <AppLayout breadcrumbs={breadcrumbs} children={page} />
+    <AppLayout breadcrumbs={breadcrumbs}>{page}</AppLayout>
 );
 
 export default Dashboard;

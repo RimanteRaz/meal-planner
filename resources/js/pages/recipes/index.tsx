@@ -13,7 +13,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 const RecipeList = () => 'Recipes';
 
 RecipeList.layout = (page: ReactNode) => (
-    <AppLayout breadcrumbs={breadcrumbs} children={page} />
+    <AppLayout breadcrumbs={breadcrumbs}>{page}</AppLayout>
 );
 
 export default RecipeList;
