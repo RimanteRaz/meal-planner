@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
 import AppLayout from '@/layouts/app-layout';
-import { recipes } from '@/routes';
+import recipes from '@/routes/recipes';
 import type { BreadcrumbItem } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Recipes',
-        href: recipes().url,
+        href: recipes.index.url(),
     },
 ];
 
