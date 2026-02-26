@@ -11,7 +11,8 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard, recipes } from '@/routes';
+import { dashboard } from '@/routes';
+import recipes from '@/routes/recipes';
 import type { NavItem } from '@/types';
 import AppLogo from './app-logo';
 
@@ -23,7 +24,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Recipes',
-        href: recipes(),
+        href: recipes.index.url(),
         icon: NotebookIcon,
     },
 ];
