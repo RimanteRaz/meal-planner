@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import AppLayout from '@/layouts/app-layout';
 import recipes from '@/routes/recipes';
-import type { BreadcrumbItem } from '@/types';
+import type { BreadcrumbItem, Recipe } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -9,8 +9,10 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: recipes.index.url(),
     },
 ];
-
-const RecipeList = ({ recipes }) => {
+type RecipeListProps = {
+    recipes: Recipe;
+};
+const RecipeList = ({ recipes }: RecipeListProps) => {
     console.log({ recipes });
     return 'Recipes';
 };
