@@ -10,7 +10,10 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-const RecipeList = () => 'Recipes';
+const RecipeList = ({ recipes }) => {
+    console.log({ recipes });
+    return 'Recipes';
+};
 
 RecipeList.layout = (page: ReactNode) => (
     <AppLayout breadcrumbs={breadcrumbs}>{page}</AppLayout>
