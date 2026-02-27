@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\RecipeResource;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -13,7 +14,9 @@ class RecipeController extends Controller
      */
     public function index(Request $request)
     {
-        return Inertia::render('recipes/index', ['recipes' => $request->user()->recipes]);
+        return Inertia::render('recipes/index', [
+            'recipes' => RecipeResource::collection($request->user()->recipes),
+        ]);
     }
 
     /**
