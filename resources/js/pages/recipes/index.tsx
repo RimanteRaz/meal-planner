@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import AppLayout from '@/layouts/app-layout';
-import recipes from '@/routes/recipes';
 import type { BreadcrumbItem } from '@/types';
+import recipes from '@/wayfinder/routes/recipes';
+import type { Inertia } from '@/wayfinder/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -10,7 +11,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-const RecipeList = ({ recipes }) => {
+const RecipeList = ({ recipes }: Inertia.Pages.Recipes.Index) => {
     console.log({ recipes });
     return 'Recipes';
 };
