@@ -75,5 +75,5 @@ return [
     /**
      * runtype will write the generated Typescript to this file
      */
-    'output_file' => resource_path('types/runtype.d.ts'),
+    'output_file' => resource_path('js/types/generated/runtype.ts'),
 ];
