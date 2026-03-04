@@ -14,7 +14,7 @@ class RecipeFactory extends Factory
         return [
             'name' => $this->faker->words(5, true),
             'instructions' => $this->faker->paragraphs(3, true),
-            'image_url' => $this->faker->imageUrl(),
+            'image_url' => 'https://placehold.co/1920x1080',
             'source_url' => $this->faker->url(),
         ];
     }
