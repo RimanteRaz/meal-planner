@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Data\RecipeData;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -13,7 +14,7 @@ class RecipeController extends Controller
      */
     public function index(Request $request)
     {
-        $recipes = Recipe::latest()->where('user_id', $request->user()->id)->paginate()->toResourceCollection();
+        $recipes = RecipeData::collect(Recipe::latest()->where('user_id', $request->user()->id)->paginate());
 
         return Inertia::render('recipes/index', [
             'recipes' => Inertia::scroll($recipes),
