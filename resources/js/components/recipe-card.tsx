@@ -7,7 +7,7 @@ export const RecipeCard = ({ name, image }: Recipe) => {
             <CardHeader className="p-0">
                 <img src={image} alt={name} className="h-52 object-cover" />
             </CardHeader>
-            <CardContent className="text-xl font-bold text-slate-800 capitalize">
+            <CardContent className="text-lg font-bold text-slate-800 capitalize">
                 {name}
             </CardContent>
         </Card>
