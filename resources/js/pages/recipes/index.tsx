@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
+import { RecipeCard } from '@/components/recipe-card';
 import AppLayout from '@/layouts/app-layout';
 import recipes from '@/routes/recipes';
-import type { BreadcrumbItem, Recipe } from '@/types';
+import type { BreadcrumbItem, PaginatedResponse, Recipe } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -9,12 +10,19 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: recipes.index.url(),
     },
 ];
+
 type RecipeListProps = {
-    recipes: Recipe;
+    recipes: PaginatedResponse<Recipe[]>;
 };
+
 const RecipeList = ({ recipes }: RecipeListProps) => {
-    console.log({ recipes });
-    return 'Recipes';
+    return (
+        <div className="grid gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
+            {recipes.data.map((recipe) => (
+                <RecipeCard key={recipe.id} {...recipe} />
+            ))}
+        </div>
+    );
 };
 
 RecipeList.layout = (page: ReactNode) => (
