@@ -13,8 +13,10 @@ class RecipeController extends Controller
      */
     public function index(Request $request)
     {
+        $recipes = Recipe::latest()->where('user_id', $request->user()->id)->paginate()->toResourceCollection();
+
         return Inertia::render('recipes/index', [
-            'recipes' => Recipe::latest()->where('user_id', $request->user()->id)->paginate()->toResourceCollection(),
+            'recipes' => Inertia::scroll($recipes),
         ]);
     }
 

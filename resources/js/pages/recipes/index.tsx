@@ -1,3 +1,4 @@
+import { InfiniteScroll } from '@inertiajs/react';
 import type { ReactNode } from 'react';
 import { RecipeCard } from '@/components/recipe-card';
 import AppLayout from '@/layouts/app-layout';
@@ -17,11 +18,14 @@ type RecipeListProps = {
 
 const RecipeList = ({ recipes }: RecipeListProps) => {
     return (
-        <div className="grid gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
+        <InfiniteScroll
+            className="grid gap-6 p-6 md:grid-cols-2 lg:grid-cols-3"
+            data="recipes"
+        >
             {recipes.data.map((recipe) => (
                 <RecipeCard key={recipe.id} {...recipe} />
             ))}
-        </div>
+        </InfiniteScroll>
     );
 };
 
