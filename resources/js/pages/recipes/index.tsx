@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { RecipeCard } from '@/components/recipe-card';
 import AppLayout from '@/layouts/app-layout';
 import recipes from '@/routes/recipes';
-import type { BreadcrumbItem, PaginatedResponse, Recipe } from '@/types';
+import type { BreadcrumbItem, PaginatedResponse, RecipeData } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -13,7 +13,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 type RecipeListProps = {
-    recipes: PaginatedResponse<Recipe[]>;
+    recipes: PaginatedResponse<RecipeData[]>;
 };
 
 const RecipeList = ({ recipes }: RecipeListProps) => {
