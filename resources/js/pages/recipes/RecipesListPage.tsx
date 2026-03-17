@@ -16,7 +16,7 @@ type RecipeListProps = {
     recipes: PaginatedResponse<RecipeData[]>;
 };
 
-const RecipeList = ({ recipes }: RecipeListProps) => {
+const RecipeListPage = ({ recipes }: RecipeListProps) => {
     return (
         <InfiniteScroll
             className="grid gap-6 p-6 md:grid-cols-2 lg:grid-cols-3"
@@ -29,8 +29,8 @@ const RecipeList = ({ recipes }: RecipeListProps) => {
     );
 };
 
-RecipeList.layout = (page: ReactNode) => (
+RecipeListPage.layout = (page: ReactNode) => (
     <AppLayout breadcrumbs={breadcrumbs}>{page}</AppLayout>
 );
 
-export default RecipeList;
+export default RecipeListPage;
