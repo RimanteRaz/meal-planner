@@ -15,7 +15,7 @@ type RecipeProps = {
     recipe: RecipeData;
 };
 
-const ShowRecipe = ({ recipe }: RecipeProps) => {
+const RecipePage = ({ recipe }: RecipeProps) => {
     return (
         <div className="mx-auto max-w-3xl space-y-4 p-6">
             <Image
@@ -32,8 +32,8 @@ const ShowRecipe = ({ recipe }: RecipeProps) => {
     );
 };
 
-ShowRecipe.layout = (page: ReactNode) => (
+RecipePage.layout = (page: ReactNode) => (
     <AppLayout breadcrumbs={breadcrumbs}>{page}</AppLayout>
 );
 
-export default ShowRecipe;
+export default RecipePage;
