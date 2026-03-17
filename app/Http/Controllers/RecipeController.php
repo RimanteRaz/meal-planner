@@ -40,8 +40,12 @@ class RecipeController extends Controller
     // /**
     //  * Display the specified resource.
     //  */
-    public function show(Recipe $recipe)
+    public function show(Request $request, Recipe $recipe)
     {
+        if ($request->user()->cannot('view', $recipe)) {
+            abort(403);
+        }
+
         return Inertia::render('recipes/RecipePage', [
             'recipe' => RecipeData::from($recipe),
         ]);
