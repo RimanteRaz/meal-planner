@@ -2,15 +2,8 @@ import { LinkIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Image } from '@/components/ui/image';
 import AppLayout from '@/layouts/app-layout';
-import recipes from '@/routes/recipes';
-import type { BreadcrumbItem, RecipeData } from '@/types';
-
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Recipes',
-        href: recipes.index.url(),
-    },
-];
+import type { RecipeData } from '@/types';
+import { breadcrumbs } from './breadcrumbs';
 
 type RecipeProps = {
     recipe: RecipeData;
