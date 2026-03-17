@@ -40,10 +40,12 @@ class RecipeController extends Controller
     // /**
     //  * Display the specified resource.
     //  */
-    // public function show(Recipe $recipe)
-    // {
-    //     //
-    // }
+    public function show(Recipe $recipe)
+    {
+        return Inertia::render('recipes/show', [
+            'recipe' => RecipeData::from($recipe),
+        ]);
+    }
 
     // /**
     //  * Show the form for editing the specified resource.
