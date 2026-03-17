@@ -1,5 +1,6 @@
 import { Head } from '@inertiajs/react';
 import type { ReactNode } from 'react';
+import { AppSidebarHeader } from '@/components/app-sidebar-header';
 import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
 import AppLayout from '@/layouts/app-layout';
 import { dashboard } from '@/routes';
@@ -15,6 +16,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 const Dashboard = () => {
     return (
         <>
+            <AppSidebarHeader breadcrumbs={breadcrumbs} />
             <Head title="Dashboard" />
             <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
                 <div className="grid auto-rows-min gap-4 md:grid-cols-3">
@@ -36,8 +38,6 @@ const Dashboard = () => {
     );
 };
 
-Dashboard.layout = (page: ReactNode) => (
-    <AppLayout breadcrumbs={breadcrumbs}>{page}</AppLayout>
-);
+Dashboard.layout = (page: ReactNode) => <AppLayout>{page}</AppLayout>;
 
 export default Dashboard;

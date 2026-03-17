@@ -1,6 +1,7 @@
 import { Form, Head } from '@inertiajs/react';
 import { ShieldBan, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
+import { AppSidebarHeader } from '@/components/app-sidebar-header';
 import Heading from '@/components/heading';
 import TwoFactorRecoveryCodes from '@/components/two-factor-recovery-codes';
 import TwoFactorSetupModal from '@/components/two-factor-setup-modal';
@@ -41,7 +42,8 @@ export default function TwoFactor({
     const [showSetupModal, setShowSetupModal] = useState<boolean>(false);
 
     return (
-        <AppLayout breadcrumbs={breadcrumbs}>
+        <AppLayout>
+            <AppSidebarHeader breadcrumbs={breadcrumbs} />
             <Head title="Two-Factor Authentication" />
 
             <h1 className="sr-only">Two-Factor Authentication Settings</h1>
