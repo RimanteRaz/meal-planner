@@ -2,15 +2,8 @@ import { InfiniteScroll } from '@inertiajs/react';
 import type { ReactNode } from 'react';
 import { RecipeCard } from '@/components/recipe-card';
 import AppLayout from '@/layouts/app-layout';
-import recipes from '@/routes/recipes';
-import type { BreadcrumbItem, PaginatedResponse, RecipeData } from '@/types';
-
-const breadcrumbs: BreadcrumbItem[] = [
-    {
-        title: 'Recipes',
-        href: recipes.index.url(),
-    },
-];
+import type { PaginatedResponse, RecipeData } from '@/types';
+import { breadcrumbs } from './breadcrumbs';
 
 type RecipeListProps = {
     recipes: PaginatedResponse<RecipeData[]>;
