@@ -16,7 +16,7 @@ class RecipeController extends Controller
     {
         $recipes = RecipeData::collect(Recipe::latest()->where('user_id', $request->user()->id)->paginate());
 
-        return Inertia::render('recipes/RecipesListPage', [
+        return Inertia::render('recipes/recipes-list', [
             'recipes' => Inertia::scroll($recipes),
         ]);
     }
@@ -46,7 +46,7 @@ class RecipeController extends Controller
             abort(403);
         }
 
-        return Inertia::render('recipes/RecipePage', [
+        return Inertia::render('recipes/recipe', [
             'recipe' => RecipeData::from($recipe),
         ]);
     }
