@@ -1,5 +1,4 @@
 import { Head } from '@inertiajs/react';
-import { LinkIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Source } from '@/components/source';
 import { Image } from '@/components/ui/image';
