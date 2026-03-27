@@ -1,19 +1,27 @@
 import { Head } from '@inertiajs/react';
 import type { ReactNode } from 'react';
+import { AppSidebarHeader } from '@/components/app-sidebar-header';
 import { Source } from '@/components/source';
 import { Image } from '@/components/ui/image';
 import AppLayout from '@/layouts/app-layout';
+import recipes from '@/routes/recipes';
 import type { RecipeData } from '@/types';
-import { breadcrumbs } from './breadcrumbs';
+import { RECIPES_INDEX_BREADCRUMB } from './breadcrumbs';
 
 type RecipeProps = {
     recipe: RecipeData;
 };
 
 const RecipePage = ({ recipe }: RecipeProps) => {
+    const breadcrumbs = [
+        RECIPES_INDEX_BREADCRUMB,
+        { title: recipe.name, href: recipes.show.url(recipe.id) },
+    ];
+
     return (
         <>
             <Head title={recipe.name} />
+            <AppSidebarHeader breadcrumbs={breadcrumbs} />
 
             <div className="mx-auto max-w-3xl space-y-4 p-6">
                 <Image
@@ -33,8 +41,6 @@ const RecipePage = ({ recipe }: RecipeProps) => {
     );
 };
 
-RecipePage.layout = (page: ReactNode) => (
-    <AppLayout breadcrumbs={breadcrumbs}>{page}</AppLayout>
-);
+RecipePage.layout = (page: ReactNode) => <AppLayout>{page}</AppLayout>;
 
 export default RecipePage;
