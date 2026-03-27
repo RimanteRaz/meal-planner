@@ -4,7 +4,7 @@ import { AppSidebarHeader } from '@/components/app-sidebar-header';
 import { RecipeCard } from '@/components/recipe-card';
 import AppLayout from '@/layouts/app-layout';
 import type { PaginatedResponse, RecipeData } from '@/types';
-import { breadcrumbs } from './breadcrumbs';
+import { RECIPES_INDEX_BREADCRUMB } from './breadcrumbs';
 
 type RecipeListProps = {
     recipes: PaginatedResponse<RecipeData[]>;
@@ -13,7 +13,7 @@ type RecipeListProps = {
 const RecipeListPage = ({ recipes }: RecipeListProps) => {
     return (
         <>
-            <AppSidebarHeader breadcrumbs={breadcrumbs} />
+            <AppSidebarHeader breadcrumbs={[RECIPES_INDEX_BREADCRUMB]} />
             <InfiniteScroll
                 className="grid gap-6 p-6 md:grid-cols-2 lg:grid-cols-3"
                 data="recipes"
